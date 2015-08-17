@@ -1,0 +1,470 @@
+BODY
+{
+}
+.bodycopy
+{
+    COLOR: #000000;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 10px;
+    TEXT-DECORATION: none
+}
+.bodycopyBold
+{
+    COLOR: #000000;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.bodycontent
+{
+    COLOR: #000000;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 10px;
+    TEXT-DECORATION: none
+}
+.heading
+{
+    COLOR: #000000;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+
+.headlink
+{
+    COLOR: #000000;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: none
+}
+
+
+.headlink1
+{
+    COLOR: #000000;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: none;
+	LINE-HEIGHT:2;
+}
+
+
+
+
+.Mobilelink
+{
+    COLOR: #280506;
+    FONT-FAMILY: Verona-Regular;
+    FONT-SIZE: 10px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.Mobilelink:hover
+{
+    COLOR: #280506;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 10px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.demoSend
+{
+    COLOR: #e76a00;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 10px
+}
+.tablehead
+{
+    COLOR: #000000;
+    
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.tdcolor
+{
+    COLOR: #ff0000;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 10px;
+    TEXT-DECORATION: none
+}
+.tdcolorBlack
+{
+    COLOR: #000000;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 11px;
+    TEXT-DECORATION: none
+}
+
+.tdcolorbold
+{
+    COLOR: #e76a00;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 10px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+
+.tdcolorArialBold
+{
+    COLOR: white;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+
+.bodycopyBold
+{
+    COLOR: #000000;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.mailcontent
+{
+    COLOR: #696969;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 11px
+}
+.mailname
+{
+    COLOR: #ff8d2d;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 13px
+}
+.greetingheader
+{
+    COLOR: #ffffff;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 13px
+}
+.bodycopysmall
+{
+    COLOR: #000000;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 8px;
+    TEXT-DECORATION: none
+}
+.login
+{
+    COLOR: #194B60;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.headlinklogin
+{
+    COLOR: #194B60;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: none
+}
+.inputGreyOrange
+{
+    BACKGROUND-COLOR: #E3Eff4;
+    COLOR: #ff6700;
+    FONT-FAMILY: Verdana, Arial;
+    FONT-SIZE: 10px
+}
+.inputGreyBlue
+{
+    BACKGROUND-COLOR: #B4D5E4;
+    COLOR: white;
+    FONT-FAMILY: Verdana, Arial;
+    FONT-SIZE: 10px
+}
+.inputGreynew
+{
+    BACKGROUND-COLOR: #E3Eff4;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial;
+    FONT-SIZE: 10px
+}
+tr.greyBackGd{
+	background-color:#D3D3D3;
+}
+.inputsubmenu
+{
+    
+    COLOR: #88BFB1;
+    FONT-FAMILY: Verdana;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 20px
+}
+
+.background
+{
+    
+    COLOR: white;
+}
+.backgroundBlack
+{
+    
+    COLOR: #000000;
+}
+
+.tableBlackBGgrey 
+{
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Arial;
+    FONT-SIZE: 10px;
+    TEXT-DECORATION: none
+}
+.DottedLine
+{
+	border-bottom:1px dotted #88BFB1; 
+	border-left-width: 1px; 
+	border-right-width:1px; border-top-width:1px;
+}
+.backgroundHeader
+{
+  background: #88BFB1;
+}
+.leftlinks
+{
+	COLOR: #FFFFFF;
+	FONT-FAMILY: Arial;
+    FONT-SIZE: 10px;
+    TEXT-DECORATION: none
+}
+.dataTable {
+	margin-left: auto;
+	margin-right: auto;
+}
+table .dataTable th{
+	background: #88BFB1;
+	border-left-width: 1px; 
+	border-right-width: 1px; 
+	border-top-width: 1px; 
+	border-bottom: 1px;
+	COLOR: #000000;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none;
+	text-align:center;
+	height:20px;
+}
+table.textTable th{
+	background: #88BFB1;
+	border-left-width: 1px; 
+	border-right-width: 1px; 
+	border-top-width: 1px; 
+	border-bottom: 1px;
+	COLOR: #000000;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 15px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none;
+	text-align:center;
+	height:20px;
+}
+table.textTable td{
+	height:20; 
+	COLOR: #000000;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 11px;
+	text-align:left;	
+	height:25px;
+}
+table .dataTable td{
+	border-left-width: 1px; 
+	border-right-width: 1px; 
+	border-top-width: 1px; 
+	border-bottom: 1px dotted #88BFB1; 
+	height:20; 
+	COLOR: #000000;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 11px;
+	text-align:left;	
+	height:25px;
+}
+
+table .dataTable  td .heading{
+	FONT-WEIGHT: bold;
+	text-align:center;
+}
+table.dataTable  td.center{
+	text-align:center;
+}
+table.tdCenter td{
+	text-align:center;
+}
+table.bordered {
+	border: 1px solid #88BFB1;
+}
+table.borderedTable {
+	border: 2px solid #88BFB1;
+}
+table.bordered td{
+	border: 1px solid #88BFB1;
+}
+table.bordered th{
+	background: #FFFFFF;
+	border: 1px solid #88BFB1;
+}
+table.dataTable  td.number{
+	text-align:right;
+}
+.spacer{
+	padding: 10px;	
+	clear:both;
+}
+div .errorContainer{
+	overflow-y: scroll;
+	width:600px;
+	height:300px;
+	border: 1px dotted #88BFB1;
+}
+
+.mwbutton {
+	FONT-FAMILY: Arial;
+	font-weight:600;
+	font-size: 11px;
+	color:#FFFFFF;
+	background-color: #FF0000;
+	background-image: url("../images/red_arrow.jpg");
+	background-position: right;
+	background-repeat: no-repeat;
+	border: none;	
+}
+.promoHeadFont
+{
+	BACKGROUND-COLOR: #FFCC66;
+    COLOR: #660000;
+    FONT-FAMILY: Verona-Regular;
+    FONT-SIZE: 13px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none;
+	LINE-HEIGHT:1.5;
+}
+
+.promoTableFont
+{
+	background: #FFFFCC;
+	border-left-width: 1px; 
+	border-right-width: 1px; 
+	border-top-width: 1px; 
+	border-bottom: 1px;
+	COLOR: #000000;
+    FONT-FAMILY: Verona-Regular;
+    FONT-SIZE: 20px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none;
+	text-align:center;
+	height:20px;
+}
+
+table.promoTableFont td{
+	text-align:left;
+	FONT-SIZE: 11px;
+	 FONT-FAMILY: Arial;
+}
+table.promoTableFont th{
+	text-align:center;
+	FONT-SIZE: 12px;
+	FONT-FAMILY: Arial;
+}
+table.promoTableFont tr{
+	text-align:left;
+	FONT-SIZE: 11px;
+	FONT-FAMILY: Arial;
+}
+
+#back-top {
+position: fixed;
+bottom: -16px;
+margin-left: 700px;
+}
+#back-top a {
+	width: 108px;
+	display: block;
+	text-align: left;
+	text-decoration: none;
+ }
+	#back-top span {
+	width: 50px;
+	height: 55px;
+	display: block;
+	margin-bottom: 7px;
+	background: url(../images/up_arrow.gif) no-repeat center center;
+	}
+	
+	
+#back-down {
+position: fixed;
+top: 10px;
+margin-left: 700px;
+}
+#back-down a {
+	width: 108px;
+	display: block;
+	text-align: left;
+	text-decoration: none;
+ }
+	#back-down span {
+	width: 50px;
+	height: 55px;
+	display: block;
+	margin-bottom: 7px;
+	background: url(../images/down_arrow.gif) no-repeat center center;
+	}
+	
+	/*Code start by Anshul for Promotion Head count report in feb'14*/
+    #myHeading
+    {
+	background-color: grey;
+	color: white;
+	text-align: center;               
+    }
+	
+	#verticalText
+	{
+	text-align: center;
+	vertical-align: middle;
+	/*background-color: #CCCCCC;*/
+	width: 69px;
+	height: 500px;
+	margin: 0px;
+	padding: 0px;
+	padding-left: 3px;
+	padding-right: 3px;
+	padding-top: 1px;
+	white-space: nowrap;
+	webkit-transform: rotate(90deg); 
+	moz-transform: rotate(90deg);   
+	/*-ms-writing-mode:tb-rl;*/ 
+	/*-moz-transform:rotate(90deg); 
+	-o-transform: rotate(90deg);*/ 
+	display:blocking;
+	/*zoom: 1\16;
+	writing-mode: tb-rl\9;
+	filter: flipv fliph;*/                 
+	}
+	
+	/*Code ends by Anshul for Promotion Head count report in feb'14*/
+	.submitButton
+{
+    BACKGROUND-COLOR: #044500;
+    color: white;
+ FONT-FAMILY: Arial;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+}
+.loginLabel
+{
+    BACKGROUND-COLOR: #044500;
+    color: pink;
+ FONT-FAMILY: Arial;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+}

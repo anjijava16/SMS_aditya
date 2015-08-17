@@ -1,0 +1,117 @@
+.wait{
+  text-align:center;
+  text-transform: Capitalize;
+  position: relative;
+  color:#DDD;
+  animation: glowtext .8s linear infinite alternate;
+  padding:2px;
+}
+@keyframes glowtext {
+    0% {
+       color:#EEE;     
+        text-shadow:10px 0px 3px rgba(0,0,0,.8);
+    }	
+  
+    50% {
+       color:#EEE;     
+        text-shadow:0 0px 0px rgba(0,0,0,1); 
+    }	
+  
+    100% {
+      color:#EEE;
+       text-shadow:-10px 0px 3px rgba(0,0,0,.8); 
+    }
+}
+.wait:before{  
+  content:"";
+  display: block;
+  position:absolute;
+  bottom:0;
+  left:0;
+  height:1px;
+  background-color: #0B0B0B;
+  animation: glow .4s linear infinite alternate;
+ 
+}
+@keyframes glow {
+    0% {
+      border-color: #EEE;
+      box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;}	
+    100% {
+      border-color: #EEE;
+      box-shadow: 0 0 15px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;}
+}
+.wait:after{  
+  content:"";
+  display: block;
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:3%;
+  height:1px;
+  background-color:#DDD;
+
+  animation:progress linear .8s infinite ;
+}
+
+@keyframes progress {
+	0%  {left:0   ;width:0   ;right:100%;}
+  50% {left:0   ;width:100%;right:0;   }
+  100%{left:100%;width:0   ;right:0;  }
+}
+body {
+  background: #2f313d;
+  color: #46485c;
+ background: url(../images/background.jpg) no-repeat center center fixed; 
+  background-size: cover
+}
+.login {
+  width: 250px;
+  position: absolute;
+  top: 60%;
+  left: 30%;
+  margin: -184px 0px 0px -155px;
+  /* background: rgba(0,0,7,0.9); */
+  padding: 20px 30px;
+  border-radius: 5px;
+  border-color:#7BB;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.7),inset 0px 1px 0px rgba(255,255,255,0.2)
+}
+
+input[type="text"], input[type="password"] {
+  width: 250px;
+  padding: 25px 0px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-weight:600;
+  color:green;
+  font-size: 15px;
+}
+
+input[type="submit"] {
+  background: #008000;
+  border: 0;
+  width: 250px;
+  height: 40px;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+input[type="submit"]:hover {
+  background: #16aa56;
+}
+::-webkit-input-placeholder {
+  color: #46485c;
+}
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: all 0.2s linear;
+  transform: translate(10px, 0);
+  opacity: 0;
+}
+ #errorMessage {
+	color:#B40404;
+	font-size: 14px;
+	font-weight: 600;
+}
