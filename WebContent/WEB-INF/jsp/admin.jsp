@@ -28,13 +28,6 @@
 				<c:forEach var="user" items="${userList}">
 					<li><a href="${pageContext.request.contextPath}${user[0]}">${user[1]}</a></li>
 				</c:forEach>
-				<c:forEach var="user" items="${userList}">
-					<li><a href="${pageContext.request.contextPath}${user[0]}">${user[1]}</a></li>
-				</c:forEach>
-				<c:forEach var="user" items="${userList}">
-					<li><a href="${pageContext.request.contextPath}${user[0]}">${user[1]}</a></li>
-				</c:forEach>
-
 			</ul>
 			<!--  navigation sidebar ends-->
 			<div class="middle-container">
