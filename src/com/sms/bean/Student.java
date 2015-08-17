@@ -1,8 +1,14 @@
 package com.sms.bean;
 
+import java.io.Serializable;
+
 import org.springframework.web.multipart.MultipartFile;
 
-public class Student {
+public class Student implements Serializable{
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1678687L;
 private String studentID;
 private String firstName;
 private String	lastName ;	
@@ -17,16 +23,31 @@ private	String medCond;
 private String 	rescAddress;	
 private	String emerContact ;
 private	String parentID;
-private	String fileName; ;
+private	String fileName;
+private	MultipartFile image ;
+private Parent parent;
+private	 String course;
+private String status;
+
+public String getStatus() {
+	return status;
+}
+public void setStatus(String status) {
+	this.status = status;
+}
+public String getCourse() {
+	return course;
+}
+public void setCourse(String course) {
+	this.course = course;
+}
 public String getFileName() {
 	return fileName;
 }
 public void setFileName(String fileName) {
 	this.fileName = fileName;
 }
-private	MultipartFile image ;
-private Parent parent;
-private	Class smsclass;
+
 public String getLastName() {
 	return lastName;
 }
@@ -107,12 +128,6 @@ public Parent getParent() {
 }
 public void setParent(Parent parent) {
 	this.parent = parent;
-}
-public Class getSmsclass() {
-	return smsclass;
-}
-public void setSmsclass(Class smsclass) {
-	this.smsclass = smsclass;
 }
 public String getDobDate() {
 	return dobDate;

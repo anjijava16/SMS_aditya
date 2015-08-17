@@ -18,8 +18,9 @@ public class ValidateFilter implements Filter {
 	private ServletContext servletContext;
 
 	@Override
-	public void init(FilterConfig arg0) throws ServletException {
+	public void init(FilterConfig fg) throws ServletException {
 	System.out.println("filter executed..");
+	servletContext = fg.getServletContext();
 		
 	}
 	
@@ -30,20 +31,27 @@ public class ValidateFilter implements Filter {
        
 	public void doFilter(ServletRequest req, ServletResponse resp,
 			FilterChain filter) throws IOException, ServletException {
-		
+		try{
 		HttpServletRequest request = (HttpServletRequest)req	;
 		HttpServletResponse response = (HttpServletResponse)resp;
 		HttpSession session = ((HttpServletRequest)request).getSession();
 		
 		String url = request.getRequestURL().toString();
 		//http://localhost:8080/SMSApplication/sms/logout
-		String username= (String)session.getAttribute("username");
 		
-		if(null == username || "".equals(username)){
-			servletContext.getRequestDispatcher("/login").forward(request, resp);
-		}else{
-			filter.doFilter(request, resp);	
+		if(null !=url && url.indexOf("login") ==-1 && url.indexOf("home") == -1){
+			
+			String username= (String)session.getAttribute("username");
+			if(null == username || "".equals(username)){
+				servletContext.getRequestDispatcher("/login").forward(request, resp);
+				return;
+			}
+			
 		}
-		
+			filter.doFilter(request, resp);	
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 }

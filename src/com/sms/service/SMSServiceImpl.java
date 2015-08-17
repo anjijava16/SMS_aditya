@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.sms.bean.Course;
 import com.sms.bean.Role;
 import com.sms.bean.Student;
 import com.sms.bean.User;
@@ -32,15 +33,36 @@ public class SMSServiceImpl implements SMSService {
 		
 	}
 	@Override
-	public Student getStudentProfile(String studentId) throws Exception {
+	public List<Student> getStudentProfile(String studentId, String parentId) throws Exception {
 		// TODO Auto-generated method stub
-		return smsdao.getStudentProfile(studentId);
+		return smsdao.getStudentProfile(studentId,parentId);
 		
 	}
 	@Override
 	public List<Role> getRoleList() throws Exception {
 		// TODO Auto-generated method stub
 		return smsdao.getRoleList();
+	}
+	@Override
+	public List<List<String>> getCourseDetails(String studentId) {
+		// TODO Auto-generated method stub
+		return smsdao.getCourseDetails(studentId);
+	}
+	@Override
+	public List<Course> getCourseList() throws Exception {
+		// TODO Auto-generated method stub
+		return smsdao.getCourseList();
+	}
+	@Override
+	public List<Student> getSearchedProfile(String code, String status)
+			throws Exception {
+		// TODO Auto-generated method stub
+		return smsdao.getSearchedProfile(code, status);
+	}
+	@Override
+	public boolean approveProfiles(String[] studentIds) {
+		// TODO Auto-generated method stub
+		return smsdao.approveProfiles(studentIds);
 	}
 
 }

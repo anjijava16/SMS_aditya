@@ -1,13 +1,10 @@
 package com.sms.controller;
  
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -15,9 +12,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.sms.bean.Course;
 import com.sms.bean.Role;
 import com.sms.bean.Student;
 import com.sms.bean.User;
@@ -45,7 +42,7 @@ public class SMSController{
 				 model.addAttribute("includePage", page);
 				 request.getSession().setAttribute("username", username);
 				 request.getSession().setAttribute("userList", userList);
-				 return new ModelAndView("admin"); 
+				 return new ModelAndView("home"); 
 
 			 }else{
 				 model.addAttribute("invalidUser", "Password Incorrect");
@@ -91,7 +88,7 @@ public class SMSController{
          model.addAttribute("userRoleList",rolelist);
 		 model.addAttribute("includePage", "registerProfile");
 		 
-	  return "admin"; 
+	  return "home"; 
 	 }
 	
 	 @RequestMapping("/editProfile")  
@@ -99,52 +96,99 @@ public class SMSController{
 
 		 model.addAttribute("includePage", "editProfile");
 		 
-	  return "admin"; 
+	  return "home"; 
 	 } 
-	@RequestMapping(value ="saveStdntDetails")
-	 public ModelAndView saveStudentProfile(HttpServletRequest request,
-				HttpServletResponse response , @ModelAttribute("student") Student student,Model model)throws Exception {  
-		System.out.println("Upload");
-		String fileName="";
-		student.setStudentID((String)request.getSession().getAttribute("username"));
-		if(student.getImage()!=null){
-			fileName = student.getImage().getOriginalFilename();
-			student.setFileName(student.getImage().getName());
-		}
-		  boolean flag = true;//smsService.saveStudentProfile(student); 
-		  
-		  if(flag){
-			 saveImage(student.getStudentID() + "_"+fileName, student.getImage());
-			 model.addAttribute("includePage", "ProfileSunbmitted");
-		  }
-		  return new ModelAndView("admin");
-		 } 
-	private void saveImage(String filename, MultipartFile image)throws RuntimeException, IOException {
-			try {
-			File file = new File(directoryPath + filename);
-			 
-			FileUtils.writeByteArrayToFile(file, image.getBytes());
+	
+	@RequestMapping("/assignteacher")
+	public ModelAndView assignteacher(Model model) throws Exception {
+		model.addAttribute("includePage", "defaultHome");
+		return new ModelAndView("home");
+
+	}
+	
+	@RequestMapping("/examschedule")
+	public ModelAndView examSchedule(Model model) throws Exception {
+		model.addAttribute("includePage", "defaultHome");
+		return new ModelAndView("home");
+
+	}
+	
+	@RequestMapping("/getAllProfile")
+	public ModelAndView getAllProfile(HttpServletRequest req,
+			@RequestParam("courseCode") String courseCde,@RequestParam("status") String status,Model model) throws Exception {
+		List<Student> profileList = smsService.getSearchedProfile(courseCde,status);
+		model.addAttribute("includePage", "getAlProfile");
+		req.getSession().setAttribute("profileList", profileList);
+		model.addAttribute("profileList", profileList);
+		return new ModelAndView("home");
+
+	}
+	@RequestMapping("/viewProfile")
+	public ModelAndView viewProfile(HttpServletRequest req,@RequestParam("studentId") String studentId,Model model) throws Exception {
+		List<Student> profileList = (List<Student>)req.getSession().getAttribute("profileList");
+		
+		Student selStudent = null;
+		if(null != profileList && !profileList.isEmpty()){
 			
-			} catch (IOException e) {
-			throw e;
+			for(Student student : profileList){
+				
+				if(student.getStudentID().equals(studentId)){
+					selStudent = student;
+					break;
+				}
 			}
-	}
+			
+		}
+		if("view".equals(req.getParameter("profileView"))){
+			model.addAttribute("includePage", "viewOnlyPage");
+		}else{
+		model.addAttribute("includePage", "editProfile");
+		model.addAttribute("homeEditPage","homeEditPage");
+		}
+		model.addAttribute("filePath",directoryPath);
+		model.addAttribute("selectStudent", selStudent);
+		
+		return new ModelAndView("home");
 
-	@RequestMapping("/sms/getStdntdetails")
-	public ModelAndView getStudentProfile(HttpServletRequest request,
-			HttpServletResponse response,@RequestParam("studentID") String studentId,Model model) throws Exception {
-		model.addAttribute("includePage", "studentEditPage");
-		Student student = smsService.getStudentProfile(studentId) ;
-		return new ModelAndView("admin", "studentProfile", student);
+	}
+	@RequestMapping("/myclass")
+	public ModelAndView getCourseDetails(HttpServletRequest request, Model model) throws Exception {
+		String studentId = (String)request.getSession().getAttribute("username");
+		List<List<String>> coursList = smsService.getCourseDetails(studentId);
+			model.addAttribute("includePage", "MyClassDetails");
+		    model.addAttribute("mycoursList", coursList);
+		
+	return new ModelAndView("home");
 
 	}
-	/*
-	@RequestMapping("/list")
-	public ModelAndView list(HttpServletRequest request,
-		HttpServletResponse response) throws Exception {
- 
-		return new ModelAndView("CustomerPage", "msg","list() method");
- 
+	@RequestMapping("/viewprofilebyparent")
+	public ModelAndView viewprofilebyparent(HttpServletRequest request, Model model) throws Exception {
+		String studentId=null;
+		String parentId = (String)request.getSession().getAttribute("username");
+		List<Student> profileList = smsService.getStudentProfile(studentId,parentId);
+		model.addAttribute("includePage", "viewListPage");
+		
+		if(null!= profileList && !profileList.isEmpty()){
+		model.addAttribute("profileViewList", profileList);
+		request.getSession().setAttribute("profileList", profileList);
+		}
+		
+	return new ModelAndView("home");
+
 	}
- */
+	
+	@RequestMapping("/approveProfile")
+	public ModelAndView approveProfiles(HttpServletRequest request, Model model) throws Exception {
+		String[] studentIds = request.getParameterValues("approvedProf");
+		if(studentIds.length > 0){
+		//List<List<String>> coursList = smsService.getCourseDetails(studentId);
+		boolean flag = smsService.approveProfiles(studentIds);
+		model.addAttribute("includePage", "ProfileSunbmitted");
+		}else{
+			model.addAttribute("includePage", "atLeastOneChkBoxselet");
+			
+		}
+		return new ModelAndView("home");
+
+	}
 }

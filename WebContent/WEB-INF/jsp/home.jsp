@@ -7,7 +7,8 @@
 
 <link type="text/css" href="resources/css/theme.css" rel="stylesheet" />
 <link type="text/css" href="resources/css/login.css" rel="stylesheet" />
-<link type="text/css" href="resources/css/datepicker.css" rel="stylesheet" />
+<link type="text/css" href="resources/css/datepicker.css"
+	rel="stylesheet" />
 <script src="resources/scripts/scripts.js"></script>
 <script src="resources/scripts/login.js"></script>
 <script
@@ -20,7 +21,7 @@
 
 
 	<div class="wrapper">
-		
+
 		<div class="container">
 
 			<!--  navigation sidebar starts-->
@@ -33,22 +34,46 @@
 			<div class="middle-container">
 				<c:choose>
 					<c:when test="${includePage== 'defaultHome'}">
-    Welcome
+   Welcome
   </c:when>
 					<c:when test="${includePage== 'editProfile'}">
 						<jsp:include page="StudentForm.jsp" flush="true" />
 					</c:when>
-					<c:when test="${includePage== 'ProfileSunbmitted'}">
-   Profile Submitted Successfully
-  </c:when>
+					<c:when test="${includePage== 'myProfile'}">
+						<jsp:include page="StudentForm.jsp" flush="true" />
+					</c:when>
 					<c:when test="${includePage== 'registerProfile'}">
 						<jsp:include page="RegisterForm.jsp" flush="true" />
 					</c:when>
+					<c:when test="${includePage== 'serchProfile'}">
+						<jsp:include page="SerchStudentProfile.jsp" flush="true" />
+					</c:when>
+					<c:when test="${includePage== 'getAlProfile'}">
+						<jsp:include page="ShowAppProfile.jsp" flush="true" />
+					</c:when>
+					<c:when test="${includePage== 'ViewProfile'}">
+						<jsp:include page="ViewStudentForm.jsp" flush="true" />
+					</c:when>
+					<c:when test="${includePage== 'MyClassDetails'}">
+						<jsp:include page="MyClass.jsp" flush="true" />
+					</c:when>
+					<c:when test="${includePage== 'viewListPage'}">
+						<jsp:include page="viewListPage.jsp" flush="true" />
+					</c:when>
+					<c:when test="${includePage== 'viewOnlyPage'}">
+						<jsp:include page="ViewStudentForm.jsp" flush="true" />
+					</c:when>
 					<c:when test="${includePage== 'UserRegisterd'}">
-   User registered sucessfully.
+   User Registered Sucessfully
   </c:when>
-					<c:otherwise>
+					<c:when test="${includePage== 'ProfileSunbmitted'}">
+   Profile Sunbmitted Successfully
+  </c:when>
+					<c:when test="${includePage== 'atLeastOneChkBoxselet'}">
+   Please check at least one record.
+  </c:when>
 
+					<c:otherwise>
 					</c:otherwise>
 				</c:choose>
 			</div>
@@ -71,8 +96,8 @@
 
 	</div>
 
-<div class="footer">
-			@Copyright SMS<br>Developed by Subhakanta, Anirudha, Aditya
-		</div>
+	<div class="footer">
+		@Copyright SMS<br>Developed by Subhakanta, Anirudha, Aditya
+	</div>
 </body>
 </html>
